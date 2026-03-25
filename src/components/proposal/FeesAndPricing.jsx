@@ -49,6 +49,25 @@ export default function FeesAndPricing({ proposal }) {
         </div>
       )}
 
+      {/* Banking Details */}
+      <div className="border-t border-gray-200 pt-8 mb-8">
+        <p className="text-sm font-semibold text-[#0d1b2a] mb-4">Banking Details</p>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+          {[
+            ['Account Name', 'Warren Fabricius'],
+            ['Bank', 'FNB'],
+            ['Account Number', '63104192181'],
+            ['Account Type', 'Cheque / Current'],
+            ['Payment Reference', 'Full Name'],
+          ].map(([label, value]) => (
+            <div key={label} className="flex gap-2 text-sm">
+              <span className="text-gray-400 w-40 flex-shrink-0">{label}</span>
+              <span className="text-[#0d1b2a] font-medium">{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Terms */}
       {terms.length > 0 && (
         <div>
