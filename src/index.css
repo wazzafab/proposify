@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0d1b2a;
+  --color-navy-light: #162436;
+  --color-navy-card: #1a2d42;
+  --color-lime: #c8e63c;
+  --color-lime-dark: #a8c420;
+  --color-muted: #8a9bb0;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    width: 210mm;
+    background: white;
+  }
+
+  /* Each proposal section = one full A4 page */
+  .print-page {
+    width: 210mm;
+    min-height: 297mm;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    overflow: hidden;
+  }
+
+  /* Remove screen-only chrome around pages */
+  .print-wrapper {
+    background: none !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .print-wrapper > div {
+    max-width: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
